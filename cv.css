@@ -1,0 +1,9 @@
+body {
+  justify-items: center;
+  align-items: center;
+  display: grid;
+}
+
+#fotoCV {
+  width: 20%;
+}
