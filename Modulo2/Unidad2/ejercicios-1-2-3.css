@@ -1,0 +1,44 @@
+.contenedor {
+  width: 600px;
+  background-color: white;
+  border: 1px solid black;
+}
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.ejercicio1 {
+  display: flex;
+  align-items: flex-end;
+  flex-flow: column;
+}
+
+.ejercicio2 {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.ejercicio2 .item {
+  height: 200px;
+  width: 200px;
+}
+
+.ejercicio3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item1 {
+  background-color: red;
+}
+
+.item2 {
+  background-color: blue;
+}
+
+.item3 {
+  background-color: yellow;
+}
