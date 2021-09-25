@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ejemplo estructura secuencial en javascript</title>
+  </head>
+
+  <body>
+    <h1>Ejercicio 1:</h1>
+    <h4>Distancia a recorer en metros:</h4>
+    <input type="text" id="distanciaInput" />
+    <input
+      type="button"
+      value="Ver transporte recomendado"
+      onclick="transporte()"
+    />
+    <h4>Transporte recomendado: <b id="transporte"></b></h4>
+    <br /><br />
+    <h1>Ejercicio 2:</h1>
+    <h4>Arrays de Numeros:</h4>
+    <input type="text" id="arrayInput" />
+    <input type="button" value="Agregar numero al Array" onclick="arrayAdd()" />
+    <h3>Array: <b id="array"></b></h3>
+    <input type="button" value="Ver el mayor Numero" onclick="nummayor()" />
+    <h3>Numero mayor del Array: <b id="mayor"></b></h3>
+    <script>
+      //Ejercicio1
+      function transporte() {
+        var distancia = parseInt(
+            document.getElementById("distanciaInput").value
+          ),
+          transporte;
+        switch (true) {
+          case distancia <= 1000:
+            transporte = "A pie";
+            break;
+          case 1000 > distancia && distancia <= 10000:
+            transporte = "En bicicleta";
+            break;
+          case 10000 > distancia && distancia <= 30000:
+            transporte = "Colectivo";
+            break;
+          case 30000 > distancia && distancia <= 100000:
+            transporte = "Auto";
+            break;
+          case 100000 < distancia:
+            transporte = "Avion";
+            break;
+        }
+        document.getElementById("transporte").innerHTML = transporte;
+      }
+
+      //Ejercicio2
+      var array = [];
+
+      function arrayAdd() {
+        var num = document.getElementById("arrayInput").value;
+        document.getElementById("arrayInput").value = "";
+        array.push(parseInt(num));
+        document.getElementById("array").innerHTML =
+          document.getElementById("array").innerHTML + `${num} `;
+      }
+
+      function nummayor() {
+        var mayor = Math.max.apply(null, array);
+        document.getElementById("mayor").innerHTML = mayor;
+      }
+    </script>
+  </body>
+</html>
