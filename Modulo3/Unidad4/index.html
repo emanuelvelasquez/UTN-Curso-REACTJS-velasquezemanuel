@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .boton {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: x-large;
+      border: 2px solid white;
+    }
+    .contenedorBoton {
+      display: flex;
+      justify-content: space-around;
+    }
+    .rojo {
+      background-color: red;
+    }
+    .azul {
+      background-color: blue;
+    }
+    .verde {
+      background-color: green;
+    }
+  </style>
+  <body>
+    <h1>Cambiar color del fondo</h1>
+    <div class="contenedorBoton">
+      <div class="boton rojo">Rojo</div>
+      <div class="boton azul">Azul</div>
+      <div class="boton verde">Verde</div>
+    </div>
+    <br /><br />
+    <h1>Contador de catacteres de Textarea</h1>
+    <textarea name="" id="textarea" cols="50" rows="10"></textarea>
+    <h3>Caracteres totales: <b id="conteo">0</b></h3>
+    <br />
+    <h1>Alumnos aprovados</h1>
+    <input type="button" value="Aprovados" onclick="cargaAlumnos(true)" /><input
+      type="button"
+      value="Todos"
+      onclick="cargaAlumnos()"
+    />
+    <ul id="alumonosTotal"></ul>
+  </body>
+  <script>
+    //Ejercicio 1
+    const botones = document.querySelectorAll(".boton");
+    const body = document.getElementsByTagName("body")[0];
+    botones.forEach((boton) =>
+      boton.addEventListener("click", function () {
+        switch (boton.innerText) {
+          case "Rojo":
+            body.style.backgroundColor = "red";
+            break;
+          case "Azul":
+            body.style.backgroundColor = "blue";
+            break;
+          case "Verde":
+            body.style.backgroundColor = "green";
+            break;
+        }
+        body.innerText;
+      })
+    );
+
+    //Ejercicio 2
+    var caracteresTextarea = 0;
+    var textArea = document.getElementById("textarea"),
+      conteCaracteres = document.getElementById("conteo");
+
+    textArea.addEventListener("keyup", function () {
+      caracteresTextarea = textArea.value.length;
+      conteCaracteres.innerText = caracteresTextarea;
+    });
+
+    //Ejercicio 3
+    var alumnos = [
+      {
+        nombre: "Juan Gomez",
+
+        nota: 7,
+      },
+      {
+        nombre: "Pedro Rodriguez",
+
+        nota: 4,
+      },
+      {
+        nombre: "Roxana García",
+
+        nota: 8,
+      },
+      {
+        nombre: "Luciano Lopez",
+
+        nota: 5,
+      },
+      {
+        nombre: "Fernanda Gimenez",
+
+        nota: 6,
+      },
+      {
+        nombre: "Florencia Martinez",
+
+        nota: 10,
+      },
+      {
+        nombre: "Raul Sanchez",
+
+        nota: 7,
+      },
+      {
+        nombre: "Sandra Figueroa",
+
+        nota: 8,
+      },
+    ];
+
+    var listaAlumnos = document.getElementById("alumonosTotal");
+
+    function cargaAlumnos(aprobados = false) {
+      listaAlumnos.innerHTML = "";
+      var array = aprobados
+        ? alumnos.filter((alum) => alum.nota >= 7)
+        : alumnos;
+      array.forEach((alumno) => {
+        var liNuevo = document.createElement("li");
+        liNuevo.innerText = `Nombre: ${alumno.nombre}, Nota: ${alumno.nota}`;
+        listaAlumnos.appendChild(liNuevo);
+      });
+    }
+    cargaAlumnos();
+  </script>
+</html>
