@@ -30,23 +30,19 @@
             document.getElementById("distanciaInput").value
           ),
           transporte;
-        switch (true) {
-          case distancia <= 1000:
-            transporte = "A pie";
-            break;
-          case 1000 > distancia && distancia <= 10000:
-            transporte = "En bicicleta";
-            break;
-          case 10000 > distancia && distancia <= 30000:
-            transporte = "Colectivo";
-            break;
-          case 30000 > distancia && distancia <= 100000:
-            transporte = "Auto";
-            break;
-          case 100000 < distancia:
-            transporte = "Avion";
-            break;
+
+        if (distancia <= 1000) {
+          transporte = "A pie";
+        } else if (1000 < distancia && distancia <= 10000) {
+          transporte = "En bicicleta";
+        } else if (10000 < distancia && distancia <= 30000) {
+          transporte = "En Colectivo";
+        } else if (30000 < distancia && distancia <= 100000) {
+          transporte = "En Auto";
+        } else if (100000 < distancia) {
+          transporte = "En Avion";
         }
+
         document.getElementById("transporte").innerHTML = transporte;
       }
 
@@ -60,10 +56,14 @@
         document.getElementById("array").innerHTML =
           document.getElementById("array").innerHTML + `${num} `;
       }
-
+      var mayor = 0;
       function nummayor() {
-        var mayor = Math.max.apply(null, array);
-        document.getElementById("mayor").innerHTML = mayor;
+        array.forEach((num) => (mayor = num > mayor ? num : mayor));
+        document.getElementById(
+          "mayor"
+        ).innerHTML = `De los numeros: ${array} el mayor numero es: ${mayor}`;
+        array = [];
+        document.getElementById("array").innerHTML = "";
       }
     </script>
   </body>
