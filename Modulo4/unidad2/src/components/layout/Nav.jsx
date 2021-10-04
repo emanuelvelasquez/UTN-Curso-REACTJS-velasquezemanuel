@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/nav.css";
 
 const Nav = (props) => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark">
       <Link className="navbar-brand titleheader" to="/" id="headerTitle">
         Music 2.0
       </Link>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNavAltMarkup"
@@ -16,19 +17,19 @@ const Nav = (props) => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav">
           <Link className="nav-link active" to="/">
             Pagina Principal
           </Link>
-          <a class="nav-link disabled" href="juegos.html">
-            Musica
-          </a>
-          <a class="nav-link disabled" href="galeria.html">
-            Galeria
-          </a>
+          <Link className="nav-link" to="/canciones">
+            Canciones
+          </Link>
+          <Link className="nav-link disabled" to="/reproductor">
+            Reproductor
+          </Link>
 
           {/*  <div class="nav-item dropdown">
             <Link className="nav-link dropdown-toggle" to="/">

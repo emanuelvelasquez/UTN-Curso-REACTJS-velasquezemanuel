@@ -19,17 +19,26 @@
 
     <title>Music 2.0</title>
 </head>
-<body  id="root">
+<body >
+    <div id="root"></div>
 
 </body>
 <script>
-    $("a.nav-link, .titleheader").on("click",function(){
+
+$("a.nav-link, .titleheader").on("click",  function(){
         $("a.nav-link, .titleheader").removeClass('active');
         if  (!$(this).hasClass('titleheader')){
             $(this).addClass('active')
         }else{
             $("a.nav-link").first().addClass('active')
         }
-    } );
+});
+
+    $(document).ready(()=>{
+        var pathname = window.location.pathname
+        //alert(pathname)
+        $("a.nav-link, .titleheader").removeClass('active');
+        $(`.nav-link[href="${pathname}"]`).addClass('active')
+    })
 </script>
 </html>

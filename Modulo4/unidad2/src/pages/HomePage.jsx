@@ -1,5 +1,6 @@
 import React from "react";
 import imgHome from "../images/home.png";
+import "../styles/homePage.css";
 
 const HomePage = (props) => {
   return (
@@ -26,15 +27,15 @@ const HomePage = (props) => {
           </div>
         </div>
       </div>
-      <hr class="mt-1 mb-4" />
+      <hr className="mt-1 mb-4" />
       <div className="row d-flex justify-content-around" id="cardSecu">
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
@@ -42,13 +43,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
@@ -56,13 +57,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
@@ -70,13 +71,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
@@ -84,13 +85,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
@@ -98,13 +99,13 @@ const HomePage = (props) => {
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <div class="card-header d-flex justify-content-center">
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm">
+            <div className="card-header d-flex justify-content-center">
               <h2>Titulo</h2>
             </div>
-            <div class="card-body">
-              <p class="card-text">
+            <div className="card-body">
+              <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
