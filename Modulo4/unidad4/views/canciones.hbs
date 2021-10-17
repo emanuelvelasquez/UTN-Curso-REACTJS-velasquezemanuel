@@ -1,0 +1,25 @@
+<h1>Canciones</h1>
+<br>
+<div class="container row">
+    <div class="col-md-6 col-sm-12">
+        <form action="/canciones" method="post" class="form-group">
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control">
+        <label>Artista</label>
+        <input type="text" name="artista" class="form-control">
+        <label>Año</label>
+        <input type="text" name="año" class="form-control">
+        <br>
+        <input type="submit" value="Guadar Cancion" class="btn btn-info">
+        <a href="/canciones/limpiar" class="btn btn-danger">Limpiar Canciones</a>
+        </form>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <ul >
+            {{#each canciones}}
+            <li>{{this.nombre}}, {{this.artista}} y {{this.año}}</li>
+            {{/each}}
+
+        </ul>
+    </div>
+</div>
