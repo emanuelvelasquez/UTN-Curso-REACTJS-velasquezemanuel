@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<br>
+<ul>
+    {{#each empleados}}
+    
+    <li>- {{this.id_emp}}, - {{this.nombre}}, - {{this.apellido}}, - {{this.edad}}</li>
+
+    {{/each}}
+</ul>

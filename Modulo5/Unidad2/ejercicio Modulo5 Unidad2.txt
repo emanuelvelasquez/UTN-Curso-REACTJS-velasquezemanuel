@@ -1,0 +1,189 @@
+1) �Cu�les son los nombres y la ocupaci�n de cada uno de los empleados?
+
+SELECT nombre, trabajo FROM `empleados`
+
+
+nombre	trabajo	
+Juan	Programador Senior	
+Gonzalo	Programador Senior	
+Ana	Desarrollador Web	
+Maria	Desarrollador Web	
+Alfred	Programador	
+Juan	Programador	
+Eduardo	Programador	
+Alejandro	Programador	
+Hernan	Especialista Multimedia	
+Pablo	Especialista Multimedia	
+Arturo	Especialista Multimedia	
+Jimena	Dise?ador Web	
+Roberto	Administrador de sistemas	
+Daniel	Administrador de sistemas	
+Miguel	Ejecutivo de Ventas Senior	
+Monica	Ejecutivo de ventas	
+Alicia	Ejecutivo de ventas	
+Jose	Ejecutivo de ventas	
+Sabrina	Gerente de Soporte tecnico	
+Pedro	Gerente de finanzas	
+Mariano	Presidente	
+
+2) �Cu�l es el nombre y la edad de cada uno de los empleados?
+
+SELECT nombre, edad FROM `empleados`
+
+
+nombre	edad	
+Juan	32	
+Gonzalo	32	
+Ana	27	
+Maria	26	
+Alfred	31	
+Juan	36	
+Eduardo	25	
+Alejandro	32	
+Hernan	33	
+Pablo	43	
+Arturo	32	
+Jimena	32	
+Roberto	35	
+Daniel	34	
+Miguel	36	
+Monica	30	
+Alicia	27	
+Jose	27	
+Sabrina	32	
+Pedro	36	
+Mariano	28
+
+3) �Cu�l es el nombre y la edad de todos los programadores?
+
+SELECT nombre, edad FROM `empleados` WHERE trabajo LIKE 'Programador%'
+
+
+nombre	edad	
+Juan	32	
+Gonzalo	32	
+Alfred	31	
+Juan	36	
+Eduardo	25	
+Alejandro	32	
+
+4) �Cu�les son los empleados de mas de 30 a�os?
+
+SELECT * FROM `empleados` WHERE edad >30
+
+
+id_emp	nombre	apellido	trabajo	edad	salario	mail	
+1	Juan	Hagan	Programador Senior	32	120000	juan_hagan@bignet.com	
+2	Gonzalo	Pillai	Programador Senior	32	110000	g_pillai@bignet.com	
+5	Alfred	Fernandez	Programador	31	75000	af@bignet.com	
+6	Juan	Ag?ero	Programador	36	85000	juan@bignet.com	
+8	Alejandro	Nanda	Programador	32	70000	alenanda@bignet.com	
+9	Hernan	Rosso	Especialista Multimedia	33	90000	hernan@bignet.com	
+10	Pablo	Simon	Especialista Multimedia	43	85000	ps@bignet.com	
+11	Arturo	Hernandez	Especialista Multimedia	32	75000	arturo@bignet.com	
+12	Jimena	Cazado	Dise?ador Web	32	110000	jimena@bignet.com	
+13	Roberto	Luis	Administrador de sistemas	35	100000	roberto@bignet.com	
+14	Daniel	Gutierrez	Administrador de sistemas	34	900000	daniel@bignet.com	
+15	Miguel	Harper	Ejecutivo de Ventas Senior	36	120000	miguel@bignet.com	
+19	Sabrina	Allende	Gerente de Soporte tecnico	32	200000	sabrina@bignet.com	
+20	Pedro	Campeon	Gerente de finanzas	36	220000	pedro@bignet.com	
+
+5) �Cu�l es el apellido y el mail de los empleados llamados Juan?
+
+SELECT apellido, mail FROM `empleados` WHERE nombre ='Juan'
+
+
+apellido	mail	
+Hagan	juan_hagan@bignet.com	
+Ag?ero	juan@bignet.com	
+
+6) �Cu�l es el nombre de las personas que trabajan como Programadores o Desarrolladores Web?
+
+SELECT nombre FROM `empleados` WHERE trabajo LIKE 'Programador%' || trabajo= 'Desarrollador Web'
+
+
+nombre	
+Juan	
+Gonzalo	
+Ana	
+Maria	
+Alfred	
+Juan	
+Eduardo	
+Alejandro	
+
+7) Mostrar una lista (id_emp, nombre, apellido, trabajo) de las personas cuyo numero de empleado est� entre 15 y 20.
+
+SELECT id_emp, nombre, apellido, trabajo FROM `empleados` WHERE id_emp BETWEEN 15 and 20
+
+
+id_emp	nombre	apellido	trabajo	
+15	Miguel	Harper	Ejecutivo de Ventas Senior	
+16	Monica	Sanchez	Ejecutivo de ventas	
+17	Alicia	Simlai	Ejecutivo de ventas	
+18	Jose	Iriarte	Ejecutivo de ventas	
+19	Sabrina	Allende	Gerente de Soporte tecnico	
+20	Pedro	Campeon	Gerente de finanzas	
+
+8) �Cu�les son los Programadores que ganan menos de $80000?
+
+SELECT * FROM `empleados` WHERE salario < 80000
+
+
+id_emp	nombre	apellido	trabajo	edad	salario	mail	
+5	Alfred	Fernandez	Programador	31	75000	af@bignet.com	
+8	Alejandro	Nanda	Programador	32	70000	alenanda@bignet.com	
+11	Arturo	Hernandez	Especialista Multimedia	32	75000	arturo@bignet.com	
+17	Alicia	Simlai	Ejecutivo de ventas	27	70000	alicia@bignet.com	
+18	Jose	Iriarte	Ejecutivo de ventas	27	72000	jose@bignet.com	
+
+9) �Cu�les son los Programadores que ganan entre $75000 y  $90000?
+
+SELECT * FROM `empleados` WHERE salario BETWEEN 75000 and 90000
+
+
+id_emp	nombre	apellido	trabajo	edad	salario	mail	
+3	Ana	Dharma	Desarrollador Web	27	90000	ana@bignet.com	
+4	Maria	Anchor	Desarrollador Web	26	85000	mary@bignet.com	
+5	Alfred	Fernandez	Programador	31	75000	af@bignet.com	
+6	Juan	Ag?ero	Programador	36	85000	juan@bignet.com	
+7	Eduardo	Sacan	Programador	25	85000	eddi@bignet.com	
+9	Hernan	Rosso	Especialista Multimedia	33	90000	hernan@bignet.com	
+10	Pablo	Simon	Especialista Multimedia	43	85000	ps@bignet.com	
+11	Arturo	Hernandez	Especialista Multimedia	32	75000	arturo@bignet.com	
+16	Monica	Sanchez	Ejecutivo de ventas	30	90000	monica@bignet.com	
+
+10) �Cu�les son los trabajadores cuyo apellido comienza con S?
+
+SELECT * FROM `empleados` WHERE apellido LIKE 'S%'
+
+
+id_emp	nombre	apellido	trabajo	edad	salario	mail	
+7	Eduardo	Sacan	Programador	25	85000	eddi@bignet.com	
+10	Pablo	Simon	Especialista Multimedia	43	85000	ps@bignet.com	
+16	Monica	Sanchez	Ejecutivo de ventas	30	90000	monica@bignet.com	
+17	Alicia	Simlai	Ejecutivo de ventas	27	70000	alicia@bignet.com	
+
+11) �Cu�les son los trabajadores cuyo nombre termina en l?
+
+SELECT * FROM `empleados` WHERE nombre LIKE '%l'
+
+
+id_emp	nombre	apellido	trabajo	edad	salario	mail	
+14	Daniel	Gutierrez	Administrador de sistemas	34	900000	daniel@bignet.com	
+15	Miguel	Harper	Ejecutivo de Ventas Senior	36	120000	miguel@bignet.com	
+
+12) Agregar un empleado con ID_empleado 22 con los siguientes datos: Francisco Perez,  Programador, 26 a�os, salario 90000, mail: francisco@bignet.com.
+
+INSERT INTO `empleados`(`nombre`, `apellido`, `trabajo`, `edad`, `salario`, `mail`) VALUES ('Francisco', 'Perez', 'Programador', 26 , 90000, 'francisco@bignet.com')
+
+13) Borrar los datos de Hernan Rosso.
+
+DELETE FROM `empleados` WHERE nombre = 'Hernan' and apellido= 'Rosso'
+
+14) Modificar el salario de Daniel Gutierrez a 90000.	
+
+UPDATE `empleados` SET `salario`=90000 WHERE nombre ='Daniel' and apellido='Gutierrez'
+
+
+
