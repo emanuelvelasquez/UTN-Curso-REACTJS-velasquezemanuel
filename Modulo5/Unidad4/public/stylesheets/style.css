@@ -1,0 +1,74 @@
+/*font-family: 'Open Sans', sans-serif;*/
+body {
+  background-color: #ffffff;
+}
+
+.titleheader {
+  color: black;
+  font-size: 2.5vh !important;
+  font-style: italic;
+  font-weight: 100;
+  /* display: inline;
+  position: relative;
+  bottom: 30px; */
+}
+
+nav {
+  background-color: #084547;
+}
+
+nav a {
+  font-size: 1.3em;
+}
+nav a:hover {
+  font-size: 1.3em;
+}
+
+nav a.active,
+nav a.active:hover,
+nav a.active:focus {
+  text-decoration: 2px underline double #f79056;
+}
+
+/* escritorio */
+@media (min-width: 768px) {
+  nav a {
+    font-size: 1.3em;
+  }
+}
+/* mobil */
+@media (max-width: 768px) {
+  nav a {
+    font-size: 1.2em;
+  }
+}
+#headerTitle {
+  font-size: 2.1em;
+  border: 1px solid #f79056;
+  border-radius: 0.1em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+#headerTitle:hover {
+  border: 1px solid #084547;
+  background-color: #f79056;
+  color: #084547;
+  font-weight: 700;
+}
+header > div {
+  display: flex;
+  justify-content: center;
+  background-color: #021b20;
+}
+header > div > img {
+  width: 75%;
+}
+
+/* mobil */
+@media (max-width: 768px) {
+  header > div > img {
+    width: 100%;
+  }
+}
