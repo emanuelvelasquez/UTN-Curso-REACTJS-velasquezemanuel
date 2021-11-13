@@ -1,0 +1,56 @@
+<br />
+<div class="container text-center">
+  <div class="col">
+
+    <h2>Listado de Artistas</h2>
+    <h6 style="color:dodgerblue">{{msgSuccess}}</h6>
+    <h6 style="color:red">{{msgError}}</h6>
+    <a href="/admin/artistas/insert" class="btn btn-dark">Agregar </a>
+    <hr />
+    <table
+      class="table table-bordered w-100"
+      style="background-color:#084547;color:#fff;"
+    >
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each listado}}
+          <tr>
+            <th scope="row">{{@index}}</th>
+            <td>{{this.nombre}}</td>
+            <td>{{this.descripcion}}</td>
+            <td class="d-flex justify-content-around"><a
+                class="btn btn-dark"
+                style="color:  #fff"
+                href="/admin/artistas/detalle/{{this.id_artista}}"
+              >Detalle</a><a
+                class="btn btn-dark"
+                style="color:  #fff"
+                href="/admin/artistas/modificar/{{this.id_artista}}"
+              >Modificar</a>
+              <a
+                class="btn btn-dark"
+                style="color:  #fff"
+                href="/admin/artistas/eliminar/{{this.id_artista}}"
+              >Eliminar</a>
+            </td>
+
+          </tr>
+        {{else}}
+          <tr>
+            <th scope="row">0</th>
+            <td>Sin Contenido</td>
+            <td>Sin Contenido</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+<br />

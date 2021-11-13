@@ -1,0 +1,41 @@
+<br /><div class="container col-md-4 text-center">
+  <h2>Inicio de Session</h2>
+  <h6 id="msgSuccess" style="color:dodgerblue">{{msgSuccess}}</h6>
+  <h6 id="msgError" style="color:red">{{msgError}}</h6>
+
+  <form action="/admin/login" method="post">
+    <div class="form-group">
+      <label for="">Usuario</label>
+      <input
+        type="text"
+        class="form-control"
+        name="user"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      {{! <small id="helpId" class="form-text text-muted">Help text</small> }}
+    </div>
+    <div class="form-group">
+      <label for="">Contraseña</label>
+      <input
+        type="text"
+        class="form-control"
+        name="pass"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      {{! <small id="helpId" class="form-text text-muted">Help text</small> }}
+    </div>
+    <input
+      type="submit"
+      class="btn"
+      style="background-color:#084547;color:#fff"
+      value="Iniciar Sesion"
+    />
+  </form>
+
+</div>
