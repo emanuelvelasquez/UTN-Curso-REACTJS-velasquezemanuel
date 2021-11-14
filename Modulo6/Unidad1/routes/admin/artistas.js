@@ -62,7 +62,14 @@ router.post("/modificar", async function (req, res) {
 //eliminar artista
 router.get("/eliminar/:id_artista", async function (req, res) {
   var row = await dbModel.deleteArtista(req.params.id_artista);
-  res.redirect("/admin/artistas");
+  if (row == "referenciado") {
+    var listado = await dbModel.getListaArtitas();
+    res.locals.msgError =
+      "No se puede eliminar este artista que esta referenciado en una Cancion";
+    res.render("admin/artistas/listado", listado);
+  } else {
+    res.redirect("/admin/artistas");
+  }
 });
 
 module.exports = router;
