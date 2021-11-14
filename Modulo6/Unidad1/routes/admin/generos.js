@@ -58,8 +58,14 @@ router.post("/modificar", async function (req, res) {
 //eliminar genero
 router.get("/eliminar/:id_genero", async function (req, res) {
   var row = await dbModel.deleteGenero(req.params.id_genero);
-
-  res.redirect("/admin/generos");
+  if (row == "referenciado") {
+    var listado = await dbModel.getListaGeneros();
+    res.locals.msgError =
+      "No se puede eliminar este Genero que esta referenciado en una Cancion";
+    res.render("admin/generos/listado", listado);
+  } else {
+    res.redirect("/admin/generos");
+  }
 });
 
 module.exports = router;
