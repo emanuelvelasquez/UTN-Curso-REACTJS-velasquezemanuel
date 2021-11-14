@@ -131,6 +131,9 @@ async function deleteArtista(id) {
     var row = await pool.query(query, [id]);
     return row;
   } catch (error) {
+    if (error.code === "ER_ROW_IS_REFERENCED_2") {
+      return "referenciado";
+    }
     throw error;
   }
 }
@@ -177,10 +180,13 @@ async function updateGenero(genero, id) {
 }
 async function deleteGenero(id) {
   try {
-    var query = "delete from generos where id_genero = ?";
+    var query = "delete from generos where id_genero =  ?";
     var row = await pool.query(query, [id]);
     return row;
   } catch (error) {
+    if (error.code === "ER_ROW_IS_REFERENCED_2") {
+      return "referenciado";
+    }
     throw error;
   }
 }
