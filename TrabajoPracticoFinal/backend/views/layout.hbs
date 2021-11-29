@@ -35,7 +35,10 @@
     <script src="/scripts/script.js"></script>
     <title>Admin - Music 2.0</title>
   </head>
-
+  <style>
+    .custom-file-input:lang(en)~.custom-file-label::after { content: "Elegir";
+    background-color:#084547 ;color:white;border:1px solid #084547}
+  </style>
   <body>
     <header>
       <div>
@@ -90,5 +93,8 @@
     </footer>
 
   </body>
-
+  <script type="application/javascript">
+    $('input[type="file"]').change(function(e){ var fileName =
+    e.target.files[0].name; $('.custom-file-label').html(fileName); });
+  </script>
 </html>

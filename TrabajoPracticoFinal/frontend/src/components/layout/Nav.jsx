@@ -27,8 +27,11 @@ const Nav = (props) => {
           <Link className="nav-link" to="/canciones">
             Canciones
           </Link>
-          <Link className="nav-link disabled" to="/reproductor">
-            Reproductor
+          <Link className="nav-link" to="/artistas">
+            Artistas
+          </Link>
+          <Link className="nav-link" to="/generos">
+            Generos
           </Link>
 
           {/*  <div class="nav-item dropdown">

@@ -1,5 +1,37 @@
 var pool = require("./db");
 var md5 = require("md5");
+
+//vista vCanciones
+async function getVCanciones() {
+  try {
+    var query = "SELECT * FROM vCanciones";
+    var rows = await pool.query(query);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getVCancionesByArtista(id_artista) {
+  try {
+    var query = "SELECT * FROM vCanciones where id_artista = ?";
+    var rows = await pool.query(query, [id_artista]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getVCancionesByGenero(id_genero) {
+  try {
+    var query = "SELECT * FROM vCanciones where id_genero = ?";
+    var rows = await pool.query(query, [id_genero]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
 //USUARIO
 //get usuario para login
 async function getUserByNameAndPassword(user, password) {
@@ -178,6 +210,7 @@ async function updateGenero(genero, id) {
     throw error;
   }
 }
+//delete genero
 async function deleteGenero(id) {
   try {
     var query = "delete from generos where id_genero =  ?";
@@ -191,7 +224,12 @@ async function deleteGenero(id) {
   }
 }
 
+//IMAGENES
+
 module.exports = {
+  getVCanciones,
+  getVCancionesByArtista,
+  getVCancionesByGenero,
   getUserByNameAndPassword,
   getUser,
   insertUser,

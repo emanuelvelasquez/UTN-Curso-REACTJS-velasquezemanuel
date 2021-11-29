@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <header>
       <div>
-        <img src={wallpaper} width="100%" alt="Juegos-PC" />
+        <img src={wallpaper} width="100%" alt="Juegos-PC" className="w-75" />
       </div>
     </header>
   );

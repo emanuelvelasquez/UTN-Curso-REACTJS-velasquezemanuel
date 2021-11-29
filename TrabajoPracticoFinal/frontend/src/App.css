@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+div.card-body {
+  position: relative;
+  padding: 0;
+}
+div.card-body p.card-text {
+  padding-bottom: 50px;
+}
+div.card-body div.card-button {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+}

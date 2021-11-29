@@ -5,6 +5,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
 var validator = require("validator");
+const fileUpload = require("express-fileupload");
+var cors = require("cors");
+
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
@@ -15,9 +18,16 @@ var registerRouter = require("./routes/admin/register");
 var cancionesRouter = require("./routes/admin/canciones");
 var artistasRouter = require("./routes/admin/artistas");
 var generosRouter = require("./routes/admin/generos");
+var apiRouter = require("./routes/api");
 
 var app = express();
 
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -39,7 +49,7 @@ app.use(session({ resave: true, secret: "123456", saveUninitialized: true }));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 secure = async (req, res, next) => {
@@ -72,6 +82,9 @@ app.use("/admin/register", registerRouter);
 app.use("/admin/canciones", secure, cancionesRouter);
 app.use("/admin/artistas", secure, artistasRouter);
 app.use("/admin/generos", secure, generosRouter);
+
+//API REST
+app.use("/api", cors(), apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

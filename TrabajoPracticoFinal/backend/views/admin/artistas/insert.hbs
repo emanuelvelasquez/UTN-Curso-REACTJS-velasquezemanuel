@@ -5,12 +5,16 @@
 <br />
 
 <div class="container col-md-4 text-center">
-  <h2 class="d-flex justify-content-center">Agregar una Cancion</h2>
+  <h2 class="d-flex justify-content-center">Agregar una Artista</h2>
 
   <h6 style="color:dodgerblue">{{msgSuccess}}</h6>
   <h6 style="color:red">{{msgError}}</h6>
 
-  <form method="post" active="/admin/artistas/insert">
+  <form
+    method="post"
+    active="/admin/artistas/insert"
+    enctype="multipart/form-data"
+  >
     <div class="form-group">
       <label for="">Nombre</label>
       <input
@@ -37,7 +41,11 @@
       />
       <small id="helpId" class="form-text text-muted"></small>
     </div>
-
+    <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input" name="imagen" />
+      <label class="custom-file-label" for="validatedCustomFile">Seleccione una
+        Imagen...</label>
+    </div>
     <button
       type="submit"
       class="btn form-control"

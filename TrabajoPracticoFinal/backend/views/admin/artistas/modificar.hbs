@@ -10,7 +10,11 @@
   <h6 id="msgSuccess" style="color:dodgerblue">{{msgSuccess}}</h6>
   <h6 id="msgError" style="color:red">{{msgError}}</h6>
 
-  <form method="post" action="/admin/artistas/modificar">
+  <form
+    method="post"
+    action="/admin/artistas/modificar"
+    enctype="multipart/form-data"
+  >
     <div class="form-group">
       <input
         type="text"
@@ -21,6 +25,15 @@
         aria-describedby="helpId"
         placeholder=""
         required
+      />
+      <input
+        type="text"
+        class="form-control"
+        name="id_img"
+        hidden="true"
+        value="{{id_img}}"
+        aria-describedby="helpId"
+        placeholder=""
       />
       <label for="">Nombre</label>
       <input
@@ -47,7 +60,22 @@
       />
       <small id="helpId" class="form-text text-muted"></small>
     </div>
+    <label for="">Imagen</label>
 
+    <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input" name="imagen" />
+      <label class="custom-file-label" for="validatedCustomFile">Seleccione una
+        Imagen...</label>
+    </div>
+
+    {{#if image}}
+      {{{image}}}
+
+    {{else}}
+      Sin imagen
+    {{/if}}
+    <br />
+    <br />
     <button
       type="submit"
       class="btn form-control"
