@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CancionCard from "../components/CancionCard";
 import axios from "axios";
 import { useParams } from "react-router";
-import { Button, ListGroup, Modal } from "react-bootstrap";
+import { Button, Modal, ButtonGroup } from "react-bootstrap";
 import { send } from "emailjs-com";
 
 const CancionesPage = () => {
@@ -106,27 +106,26 @@ const CancionesPage = () => {
         </Modal.Header>
         <Modal.Body className="form-group">
           <h4>Listado de Canciones a Enviar</h4>
-          <ListGroup variant="flush">
+          <div style={{ height: "15em", overflow: "auto" }}>
             {cancionesEnviar.map((item) => (
-              <ListGroup.Item>
+              <h5>
                 {concatenaCancion(
                   canciones.find((cancion) => cancion.id_cancion === item)
                 )}
-              </ListGroup.Item>
+              </h5>
             ))}
-
-            <ListGroup.Item>
-              Canctidad de Canciones: <b>{cancionesEnviar.length}</b>
-            </ListGroup.Item>
-          </ListGroup>
+          </div>
+          <h5>
+            Canctidad de Canciones: <b>{cancionesEnviar.length}</b>
+          </h5>
           <hr></hr>{" "}
           <form onSubmit={onSubmit} id="formMail">
             <div className="form-group container">
-              <label for="exampleInputEmail1">Nombre Remitente</label>
+              <h5 for="exampleInputEmail1">Nombre Remitente</h5>
               <input
                 name="fromName"
                 type="text"
-                className="form-control"
+                className="form-control form-control-sm"
                 aria-describedby="emailHelp"
                 placeholder="Correo del destinatario"
                 onChange={handleChange}
@@ -135,11 +134,11 @@ const CancionesPage = () => {
             </div>
 
             <div className="form-group container">
-              <label for="exampleInputEmail1">Email Destinatario</label>
+              <h5 for="exampleInputEmail1">Email Destinatario</h5>
               <input
                 name="toMail"
                 type="email"
-                className="form-control"
+                className="form-control form-control-sm"
                 aria-describedby="emailHelp"
                 placeholder="Correo del destinatario"
                 onChange={handleChange}
@@ -147,11 +146,11 @@ const CancionesPage = () => {
               />
             </div>
             <div className="form-group container">
-              <label for="exampleInputPassword1">Nombre Destinatario</label>
+              <h5 for="exampleInputPassword1">Nombre Destinatario</h5>
               <input
                 name="to_name"
                 type="text"
-                className="form-control"
+                className="form-control form-control-sm"
                 placeholder="Nombre del destinatario"
                 onChange={handleChange}
                 require
@@ -176,7 +175,14 @@ const CancionesPage = () => {
   return (
     <>
       <div className="p-4 p-md-5">
-        <div>
+        <div
+          className="position-sticky"
+          style={{
+            top: "0",
+            backgroundColor: "white !important",
+            zIndex: "1050",
+          }}
+        >
           <div className="d-flex justify-content-center">
             <h2>
               <u>
@@ -200,13 +206,22 @@ const CancionesPage = () => {
             <div className="col-sm-12 col-md-6 text-center">
               <h4 className="col-sm-12 col-md-6 d-inline">
                 Listado para Enviar: <b>{cancionesEnviar.length} | </b>
-                <Button
-                  disabled={cancionesEnviar.length > 0 ? false : true}
-                  variant="dark"
-                  onClick={() => setModalShow(true)}
-                >
-                  Enviar por Correo
-                </Button>
+                <ButtonGroup className="mb-2">
+                  <Button
+                    disabled={cancionesEnviar.length > 0 ? false : true}
+                    variant="dark"
+                    onClick={() => setModalShow(true)}
+                  >
+                    Enviar por Correo
+                  </Button>
+                  <Button
+                    disabled={cancionesEnviar.length > 0 ? false : true}
+                    variant="danger"
+                    onClick={() => setCancionesEnviar([])}
+                  >
+                    Eliminar Listado
+                  </Button>
+                </ButtonGroup>
               </h4>
             </div>
           </div>
