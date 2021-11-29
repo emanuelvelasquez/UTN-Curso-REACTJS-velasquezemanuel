@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: -2em;
+  font-family: "Poiret One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-size: 1.2em;
+}
+
+footer p {
+  font-size: 1.3em;
+}
+
+label {
+  font-size: 1.5em !important;
+}
+
+ul > li {
+  font-size: 1.2em;
+}
+
+.form-control {
+  border: 1px solid #084547;
+}
+
+form > div > button {
+  background-color: #084547 !important ;
+  color: #fff !important;
+}

@@ -1,0 +1,21 @@
+<div class="container col-6">
+  <div class="text-center">
+    <h1>{{title}}</h1>
+    <p>Administración del Sitio Music 2.0; el administrador podra CREAR, EDITAR,
+      MODIFICAR Y ELIMINAR en cuanto a las tablas Musica, Artista y Genero.
+    </p>
+    <br />
+    {{#if logueado}}
+      <p>Tablas</p>
+      <a href="/admin/canciones" class="btn btn-info">Canciones</a>
+      <a href="/admin/artistas" class="btn btn-info">Artistas</a>
+      <a href="/admin/generos" class="btn btn-info">Generos</a>
+    {{else}}
+      <p>Inicia Sesion para poder ver el menu de Administracion</p>
+      <a href="/admin/login" class="btn btn-success">Iniciar Sesion</a>
+      <a href="/admin/register" class="btn btn-info">Registrarse</a>
+    {{/if}}
+
+  </div>
+</div>
+<br />

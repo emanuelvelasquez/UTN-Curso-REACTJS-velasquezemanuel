@@ -1,0 +1,54 @@
+#jumbotronPrincipal {
+  color: white;
+  background-color: #084547;
+  border: 2px solid #084547;
+  padding: 0.2em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+}
+
+#jumbotronPrincipal > div {
+  border: 2px solid #f79056b8;
+  padding: 1em;
+}
+#jumbotronPrincipal h2 {
+  font-weight: 600;
+}
+
+#jumbotronPrincipal,
+#cardSecu > div > div {
+  box-shadow: 0 0.5rem 1rem rgb(122 122 122 / 59%) !important;
+}
+/* escritorio */
+@media (min-width: 768px) {
+  .jumbotron p {
+    font-size: 1.6rem;
+  }
+}
+/* mobil */
+@media (max-width: 768px) {
+  .jumbotron p {
+    font-size: 1.2rem;
+  }
+}
+#imgHome {
+  width: 40vw !important;
+}
+
+#cardSecu > div > div {
+  color: #084547;
+  border: 2px solid #f79056b8;
+}
+
+#cardSecu .card-body {
+  background-color: #095f5c;
+  color: #fff;
+  font-size: 1.3em;
+}
+#cardSecu > div > div > div.card-header {
+  background-color: #084547;
+}
+#cardSecu > div > div > div.card-header > h2 {
+  font-size: 3.4em;
+  color: #fff;
+}
