@@ -176,10 +176,8 @@ const CancionesPage = () => {
     <>
       <div className="p-4 p-md-5">
         <div
-          className="position-sticky"
+          className="sticky-top bg-white"
           style={{
-            top: "0",
-            backgroundColor: "white !important",
             zIndex: "1050",
           }}
         >
@@ -202,6 +200,11 @@ const CancionesPage = () => {
               <h4>
                 Total: <b>{canciones.length}</b>
               </h4>
+              {filtro && (
+                <a className="btn btn-dark" href="/canciones">
+                  Todas las Canciones
+                </a>
+              )}
             </div>
             <div className="col-sm-12 col-md-6 text-center">
               <h4 className="col-sm-12 col-md-6 d-inline">

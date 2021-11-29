@@ -10,7 +10,7 @@ const CancionCard = ({ cancion, eventClick }) => {
     listado,
   } = cancion;
   return (
-    <div className="mb-3 col-12 col-sm-4 col-md-4 col-lg-4  p-2 align-items-stretch">
+    <div className="mb-3 col-12 col-sm-4 col-md-4 col-lg-4  p-2 d-md-flex align-items-stretch">
       <div className="card text-center p-0 p-md-3 flex-column ">
         <div className="card-body">
           <h5 className="card-title">
