@@ -115,10 +115,10 @@ const CancionesPage = () => {
               </h5>
             ))}
           </div>
-          <h5>
+          <h5 className="mt-1">
             Canctidad de Canciones: <b>{cancionesEnviar.length}</b>
           </h5>
-          <hr></hr>{" "}
+          <hr></hr>
           <form onSubmit={onSubmit} id="formMail">
             <div className="form-group container">
               <h5 for="exampleInputEmail1">Nombre Remitente</h5>

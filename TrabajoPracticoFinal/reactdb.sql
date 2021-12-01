@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 28-11-2021 a las 22:03:37
+-- Tiempo de generación: 30-11-2021 a las 21:29:30
 -- Versión del servidor: 8.0.27-0ubuntu0.21.10.1
--- Versión de PHP: 8.0.12
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `artistas` (
   `id_artista` int NOT NULL,
-  `nombre` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `id_img` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL
+  `nombre` varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `id_img` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
 
 --
@@ -61,7 +61,7 @@ INSERT INTO `artistas` (`id_artista`, `nombre`, `descripcion`, `id_img`) VALUES
 
 CREATE TABLE `canciones` (
   `id_cancion` int NOT NULL,
-  `nombre` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` varchar(500) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `id_artista` int NOT NULL,
   `id_genero` int NOT NULL
@@ -110,8 +110,8 @@ INSERT INTO `canciones` (`id_cancion`, `nombre`, `descripcion`, `id_artista`, `i
 
 CREATE TABLE `generos` (
   `id_genero` int NOT NULL,
-  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(500) COLLATE utf8_spanish_ci DEFAULT NULL
+  `nombre` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` varchar(500) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
 
 --
@@ -134,8 +134,8 @@ INSERT INTO `generos` (`id_genero`, `nombre`, `descripcion`) VALUES
 
 CREATE TABLE `usuarios` (
   `id_user` int NOT NULL,
-  `user` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `pass` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `user` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_spanish_ci;
 
 --
@@ -172,7 +172,7 @@ CREATE TABLE `vCanciones` (
 --
 DROP TABLE IF EXISTS `vCanciones`;
 
-CREATE ALGORITHM=MERGE DEFINER=`reactdbuser`@`localhost` SQL SECURITY DEFINER VIEW `vCanciones`  AS SELECT `canciones`.`id_cancion` AS `id_cancion`, `artistas`.`id_artista` AS `id_artista`, `generos`.`id_genero` AS `id_genero`, `canciones`.`nombre` AS `nombreCancion`, `canciones`.`descripcion` AS `descripcion`, `artistas`.`nombre` AS `nombreArtista`, `artistas`.`id_img` AS `id_img`, `generos`.`nombre` AS `nombreGenero` FROM ((`canciones` join `artistas` on((`canciones`.`id_artista` = `artistas`.`id_artista`))) join `generos` on((`canciones`.`id_genero` = `generos`.`id_genero`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`dbreactuser`@`localhost` SQL SECURITY DEFINER VIEW `vCanciones`  AS SELECT `canciones`.`id_cancion` AS `id_cancion`, `artistas`.`id_artista` AS `id_artista`, `generos`.`id_genero` AS `id_genero`, `canciones`.`nombre` AS `nombreCancion`, `canciones`.`descripcion` AS `descripcion`, `artistas`.`nombre` AS `nombreArtista`, `artistas`.`id_img` AS `id_img`, `generos`.`nombre` AS `nombreGenero` FROM ((`canciones` join `artistas` on((`canciones`.`id_artista` = `artistas`.`id_artista`))) join `generos` on((`canciones`.`id_genero` = `generos`.`id_genero`))) ;
 
 --
 -- Índices para tablas volcadas

@@ -1,0 +1,71 @@
+<div class="container d-flex justify-content-end"><button
+    class="btn btn-dark"
+    onclick="window.history.back()"
+  >Atras</button></div>
+<br />
+
+<div class="container col-md-4 text-center">
+  <h2 class="d-flex justify-content-center">Agregar una Cancion</h2>
+  <h6 id="msgSuccess" style="color:dodgerblue">{{msgSuccess}}</h6>
+  <h6 id="msgError" style="color:red">{{msgError}}</h6>
+
+  <form method="post" active="/admin/canciones/insert">
+    <div class="form-group">
+      <label for="">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        name="descripcion"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Artistas</label>
+      <select class="form-control" name="id_artista" required>
+        <option value="">Seleccione un Artista</option>
+        {{#each artistas}}
+          <option value={{this.id_artista}}>{{this.nombre}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <a class="btn btn-dark" href="/admin/artistas/insert">Argregar Artistas</a>
+
+    </div>
+    <div class="form-group">
+      <label for="">Generos</label>
+      <select class="form-control" name="id_genero" required>
+        <option value="">Seleccione un Genero</option>
+        {{#each generos}}
+          <option value={{this.id_genero}}>{{this.nombre}}</option>
+        {{/each}}
+      </select>
+      <br />
+      <a class="btn btn-dark" href="/admin/generos/insert">Argregar Genero</a>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn form-control"
+      style="background-color:#084547;color:#fff"
+    >Guardar</button>
+  </form>
+</div>

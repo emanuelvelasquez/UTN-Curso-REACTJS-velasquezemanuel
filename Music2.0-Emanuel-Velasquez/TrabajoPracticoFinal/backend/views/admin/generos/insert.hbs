@@ -1,0 +1,46 @@
+<div class="container d-flex justify-content-end"><button
+    class="btn btn-dark"
+    onclick="window.history.back()"
+  >Atras</button></div>
+<div class="container col-md-4 text-center">
+  <br />
+  <h2 class="d-flex justify-content-center">Listado de Generos</h2>
+
+  <h6 style="color:dodgerblue">{{msgSuccess}}</h6>
+  <h6 style="color:red">{{msgError}}</h6>
+  <form method="post" active="/admin/generos/insert">
+    <div class="form-group">
+      <label for="">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        name="descripcion"
+        id=""
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+
+    <hr />
+    <button
+      type="submit"
+      class="btn form-control"
+      style="background-color:#084547;color:#fff"
+    >Guardar</button>
+  </form>
+</div>

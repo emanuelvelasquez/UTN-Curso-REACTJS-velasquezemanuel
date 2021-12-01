@@ -1,0 +1,46 @@
+<div class="container text-center">
+  <h3>Registrarse</h3>
+  <h6 style="color:dodgerblue">{{msgSuccess}}</h6>
+
+  <h6 style="color:red">{{msgError}}</h6>
+  <div class="col-md-8 offset-md-2">
+    <form method="post" action="/admin/register">
+      <div class="form-group">
+        <label for="">Usuario</label>
+        <input
+          type="text"
+          class="form-control"
+          name="user"
+          value="{{user}}"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="pass"
+          value="{{pass}}"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="">Reingresar Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="pass1"
+          value="{{pass1}}"
+          required
+        />
+      </div>
+      <input
+        type="submit"
+        class="btn"
+        value="Registrarse"
+        style="background-color:#084547;color:#fff"
+      />
+    </form>
+  </div>
+</div>

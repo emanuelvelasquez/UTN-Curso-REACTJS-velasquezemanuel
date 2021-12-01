@@ -1,0 +1,57 @@
+<div class="container d-flex justify-content-end"><button
+    class="btn btn-dark"
+    onclick="window.history.back()"
+  >Atras</button></div>
+<br />
+
+<div class="container col-md-4 text-center">
+  <h2 class="d-flex justify-content-center">Modificar una Generos</h2>
+
+  <h6 id="msgSuccess" style="color:dodgerblue">{{msgSuccess}}</h6>
+  <h6 id="msgError" style="color:red">{{msgError}}</h6>
+
+  <form method="post" action="/admin/generos/modificar">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="id_genero"
+        hidden="true"
+        value="{{id_genero}}"
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <label for="">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        value="{{nombre}}"
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        name="descripcion"
+        value="{{descripcion}}"
+        aria-describedby="helpId"
+        placeholder=""
+        required
+      />
+      <small id="helpId" class="form-text text-muted"></small>
+    </div>
+
+    <button
+      type="submit"
+      class="btn form-control"
+      style="background-color:#084547;color:#fff"
+    >Guardar</button>
+  </form>
+</div>
